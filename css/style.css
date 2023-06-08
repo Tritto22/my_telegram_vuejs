@@ -7,4 +7,114 @@
 #root{
     background-image: linear-gradient(to bottom right, rgb(13, 4, 134), rgb(58, 235, 232));
     height: 100vh;
+    display: flex;
+    font-family: 'Rubik', sans-serif;
+}
+
+main{
+    height: 90%;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    background-color: #09096d;
+    border-radius: 20px;
+}
+
+#main-left{
+    border-right: 1px solid gray;
+    width: 35%;
+    height: 100%;
+    padding: 2px;
+}
+
+#main-user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.info{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.img-profile{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.img-profile img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.info h3{
+    padding: 10px;
+    color: lightgray;
+    padding: 0 10px;
+}
+
+.actions i {
+    font-size: 20px;
+    margin-right: 15px;
+    color: lightgray;
+}
+
+#search-friend{
+    background-color: #0a3ea0;
+    padding: 10px;
+}
+
+#search-friend input{
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+#friends{
+    height: 70%;
+    overflow: scroll;
+}
+
+.friend{
+    display: flex;
+    justify-content: space-between;
+}
+
+.friend .when{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 13px;
+    margin-right: 15px;
+    color: lightgray;
+}
+
+/* .recent-chat .last-message{
+    height: 20px;
+    overflow: hidden;
+    color: #4f93ff;
+    margin: 0px 64px;
+    border-bottom: 1px solid #4f93ff;
+    border-radius: 10px;
+    padding: 3px;
+    text-align: center;
+} */
+
+.info .details p{
+    padding: 0 10px;
+    overflow: hidden;
+    height: 20px;
+    font-weight: lighter;
+    color: #00fdd9;
+}
+
+#main-right{
+
 }
