@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root{
+    background-image: linear-gradient(to bottom right, rgb(13, 4, 134), rgb(58, 235, 232));
+    height: 100vh;
+}
