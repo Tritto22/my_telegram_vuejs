@@ -123,11 +123,23 @@ const app = new Vue({
                 ]
             }
         ],
-        activeIndex: '0'
+        activeIndex: '0',
+        newMessage: ''
     },
     methods: {
         activeFriend: function(index){
             this.activeIndex = index;
+        },
+        addMessage: function(){
+            if(this.newMessage != ''){
+                const newObj = {
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                    message: this.newMessage,
+                    status: 'sent'
+                }
+                this.contacts[this.activeIndex].messages.push(newObj);
+                this.newMessage = '';
+            }
         }
     }
 })
