@@ -136,9 +136,23 @@ const app = new Vue({
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     message: this.newMessage,
                     status: 'sent'
-                }
+                };
                 this.contacts[this.activeIndex].messages.push(newObj);
                 this.newMessage = '';
+                this.autoAnswer();
+            }
+        },
+        autoAnswer: function(){
+            const contacts = this.contacts;
+            const activeIndex = this.activeIndex;
+            setTimeout(generateAnswer, 3000);
+            function generateAnswer(){
+                const newAnswerObj = {
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                    message: 'ci sta',
+                    status: 'received'
+                }
+                contacts[activeIndex].messages.push(newAnswerObj);
             }
         }
     }
