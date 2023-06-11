@@ -84,9 +84,10 @@ main{
 .friend{
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
 }
 
-.friend-dark{
+.active-friend{
     background-color: #13003d;
 }
 
@@ -148,12 +149,11 @@ main{
 
 .user-message .message{
     background-color: #389b88;
-    position: absolute;
-    right: 0;
 }
 
 .user-message{
-    position: relative;
+    display: flex;
+    justify-content: end;
 }
 
 .message .date {

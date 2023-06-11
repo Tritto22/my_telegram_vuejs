@@ -46,15 +46,15 @@
 
                 <div id="friends">
                     <div class="recent-chat">
-                        <div class="friend" v-for="(friend,i) in contacts">
+                        <div class="friend" v-for="(friend,i) in contacts" @click="activeFriend(i)" :class="(i==activeIndex) ? 'active-friend' : null">
                             <div class="info">
                                 <div class="img-profile">
-                                    <img  :src="'img/profile'+ contacts[i].avatar + '.jpg'" alt="">
+                                    <img  :src="'img/profile'+ friend.avatar + '.jpg'" :alt="friend.name">
                                 </div>
                                 
                                 <div class="details">
-                                    <h3>{{contacts[i].name}}</h3>
-                                    <p>{{contacts[i].messages[contacts[i].messages.length-1].message}}</p>
+                                    <h3>{{friend.name}}</h3>
+                                    <p>{{friend.messages[friend.messages.length-1].message}}</p>
                                 </div>
                             </div>
                         
@@ -77,10 +77,10 @@
                 <div class="head-main">
                     <div class="info">
                         <div class="img-profile">
-                            <img src="img/profileImg.png" alt="">
+                            <img :src="'img/profile'+ contacts[activeIndex].avatar + '.jpg'" alt="">
                         </div>
                         <div class="details">
-                            <h3>Ciccio Riccio</h3>
+                            <h3>{{contacts[activeIndex].name}}</h3>
                             <p>Ultimo accesso</p>
                         </div>
                     </div>
@@ -94,20 +94,12 @@
 
                 <div class="body-main">
                     <div class="container-message">
-                        <div v-for="(message,i) in contacts[0].messages" :class="(contacts[0].messages[i].status == 'sent') ? 'friend-message' : 'user-message'">
+                        <div v-for="(message,i) in contacts[activeIndex].messages" :class="(message.status == 'sent') ? 'user-message' : 'friend-message'">
                             <div class="message">
-                                <p>{{contacts[0].messages[i].message}}</p>
-                                <div class="date">{{contacts[0].messages[i].date}}</div>
+                                <p>{{message.message}}</p>
+                                <div class="date">{{message.date}}</div>
                             </div>
                         </div>
-                        <!-- <div class="user-message">
-                            <div class="message">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur voluptas, rerum sequi voluptatum reiciendis id
-                                    sed
-                                    illum officia quo dolore error dignissimos ex fugiat architecto quod? Dolorum non error perferendis!</p>
-                                <div class="date">12/01/2021 16:50</div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
 
@@ -122,6 +114,8 @@
 
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- CDN example (jsDelivr) -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

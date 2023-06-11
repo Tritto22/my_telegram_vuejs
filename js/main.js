@@ -122,8 +122,12 @@ const app = new Vue({
                     }
                 ]
             }
-        ]
+        ],
+        activeIndex: '0'
     },
     methods: {
+        activeFriend: function(index){
+            this.activeIndex = index;
+        }
     }
 })
