@@ -154,6 +154,16 @@ const app = new Vue({
                 }
                 contacts[activeIndex].messages.push(newAnswerObj);
             }
+        },
+        searchFriend: function(){
+            // this.contacts.visible
+            // const invisible = this.contacts.map(friend=>{
+            //     friend.visible=false;
+            // });
+            //             console.log(this.contacts[0].visible);
+            this.contacts.forEach(friend => {
+                friend.visible=false;
+            });
         }
     }
 })

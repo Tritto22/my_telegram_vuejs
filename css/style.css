@@ -87,6 +87,10 @@ main{
     cursor: pointer;
 }
 
+.hidden{
+    display: none;
+}
+
 .active-friend{
     background-color: #13003d;
 }

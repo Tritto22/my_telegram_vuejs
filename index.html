@@ -41,12 +41,18 @@
                 </div>
 
                 <div id="search-friend">
-                    <input type="text" placeholder="&#xf002; Search friend">
+                    <input type="text" placeholder="&#xf002; Search friend" @click="searchFriend()">
                 </div>
 
                 <div id="friends">
                     <div class="recent-chat">
-                        <div class="friend" v-for="(friend,i) in contacts" @click="activeFriend(i)" :class="(i==activeIndex) ? 'active-friend' : null">
+                        <div 
+                        class="friend" 
+                        v-for="(friend,i) in contacts" 
+                        @click="activeFriend(i)" 
+                        :class="(i==activeIndex) ? 'active-friend' : null"
+                        :class="(friend.visible == false) ? 'hidden' : null"
+                        >
                             <div class="info">
                                 <div class="img-profile">
                                     <img  :src="'img/profile'+ friend.avatar + '.jpg'" :alt="friend.name">
