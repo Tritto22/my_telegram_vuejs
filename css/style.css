@@ -23,11 +23,10 @@ main{
 #main-left{
     border-right: 1px solid gray;
     width: 35%;
-    height: 100%;
     padding: 2px;
 }
 
-#main-user{
+.head-main{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,11 +42,11 @@ main{
 .img-profile{
     height: 60px;
     width: 60px;
-    border-radius: 50%;
 }
 
 .img-profile img {
     height: 100%;
+    border-radius: 50%;
     object-fit: contain;
 }
 
@@ -66,6 +65,7 @@ main{
 #search-friend{
     background-color: #0a3ea0;
     padding: 10px;
+    height: 60px;
 }
 
 #search-friend input{
@@ -77,13 +77,17 @@ main{
 }
 
 #friends{
-    height: 70%;
-    overflow: scroll;
+    height: calc(100% - 130px);
+    overflow: auto;
 }
 
 .friend{
     display: flex;
     justify-content: space-between;
+}
+
+.friend-dark{
+    background-color: #13003d;
 }
 
 .friend .when{
@@ -116,5 +120,64 @@ main{
 }
 
 #main-right{
+    width: 65%;
+    padding: 2px;
+}
 
+.body-main {
+    background-image: url('../img/background.jpg');
+    height: calc(100% - 140px);
+    overflow: auto;
+}
+
+.container-message{
+    padding: 50px;
+}
+
+.friend-message .message, .user-message .message{
+    width: 40%;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 5px 0;
+    color: white;
+}
+
+.friend-message .message{
+    background-color: #3785b5;
+}
+
+.user-message .message{
+    background-color: #389b88;
+    position: absolute;
+    right: 0;
+}
+
+.user-message{
+    position: relative;
+}
+
+.message .date {
+    font-size: 11px;
+    margin-top: 10px;
+    text-align: end;
+    color: lightblue;
+}
+
+.footer-main{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer-main input{
+    height: 60%;
+    width: 80%;
+    padding: 10px;
+}
+
+.footer-main i{
+    font-size: 25px;
+    margin: auto;
+    color: #54d0dd;
 }
