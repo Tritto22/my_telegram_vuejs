@@ -41,7 +41,13 @@
                 </div>
 
                 <div id="search-friend">
-                    <input type="text" placeholder="&#xf002; Search friend" @click="searchFriend()">
+                    <input 
+                    type="text" 
+                    placeholder="&#xf002; Search friend" 
+                    @click="visibleFriend()"
+                    @keyup="searchFriend" 
+                    v-model="searchBar"
+                    >
                 </div>
 
                 <div id="friends">
@@ -50,8 +56,7 @@
                         class="friend" 
                         v-for="(friend,i) in contacts" 
                         @click="activeFriend(i)" 
-                        :class="(i==activeIndex) ? 'active-friend' : null"
-                        :class="(friend.visible == false) ? 'hidden' : null"
+                        :class="[(i==activeIndex) ? 'active-friend' : null, friend.visible ? null : 'hidden']"
                         >
                             <div class="info">
                                 <div class="img-profile">

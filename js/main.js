@@ -124,7 +124,8 @@ const app = new Vue({
             }
         ],
         activeIndex: '0',
-        newMessage: ''
+        newMessage: '',
+        searchBar: ''
     },
     methods: {
         activeFriend: function(index){
@@ -155,15 +156,21 @@ const app = new Vue({
                 contacts[activeIndex].messages.push(newAnswerObj);
             }
         },
-        searchFriend: function(){
-            // this.contacts.visible
-            // const invisible = this.contacts.map(friend=>{
-            //     friend.visible=false;
-            // });
-            //             console.log(this.contacts[0].visible);
-            this.contacts.forEach(friend => {
+        visibleFriend: function(){
+            this.contacts.forEach((friend) => {
                 friend.visible=false;
             });
+        },
+        searchFriend: function(){
+            const search = this.contacts.filter(friend =>{
+                if(friend.name.toLowerCase().includes(this.searchBar.toLowerCase())){
+                    friend.visible=true;
+                    return true;
+                }
+                friend.visible=false;
+                return false;
+            });
+            console.log(search);
         }
     }
 })
